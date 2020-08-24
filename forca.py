@@ -4,8 +4,12 @@ def jogar():
     print("*******************************")
 
     palavra_secreta = "banana"
+    letras_acertadas = ["_", "_", "_", "_", "_", "_"]
+
     enforcou = False
     acertou = False
+
+    print(letras_acertadas)
 
     while (not enforcou and not acertou):
         chute = input("Qual letra? ")
@@ -14,10 +18,12 @@ def jogar():
         posicao = 0
         for letra in palavra_secreta:
             if (chute.upper() == letra.upper()):
-                print("Encontrei a letra {} na posição {}".format(chute, posicao))
+                letras_acertadas[posicao] = letra
+                letras_faltando = str(letras_acertadas.count("_"))
             posicao = posicao + 1
 
-        print("Jogando...")
+        print(letras_acertadas)
+        print("Ainda falta acertar {} letras.".format(letras_faltando))
 
     print("Fim do jogo!")
 
