@@ -12,8 +12,6 @@ def jogar():
         for linha in arquivo:
             palavras.append(linha.strip())
 
-    arquivo.close()
-
     indice = random.randrange(0, len(palavras))
     palavra_secreta = palavras[indice].upper()
     letras_acertadas = ["_" for letra in palavra_secreta]
