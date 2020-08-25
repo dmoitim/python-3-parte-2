@@ -6,11 +6,11 @@ def jogar():
     print("* Bem vindo ao jogo da Forca! *")
     print("*******************************")
 
-    arquivo = open("palavras.txt", "r")
     palavras = []
 
-    for linha in arquivo:
-        palavras.append(linha.strip())
+    with open("palavras.txt") as arquivo:
+        for linha in arquivo:
+            palavras.append(linha.strip())
 
     arquivo.close()
 
